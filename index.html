@@ -35,10 +35,11 @@
               <ul class="navbar-nav ms-auto py-4 py-lg-0">
                   <li class="nav-item"><a class="nav-link" href="#eu">Eu</a></li>
                   <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                   <li class="nav-item"><a class="nav-link" href="#contatos">Contatos</a></li>
-                  <li class="nav-item"><a class="nav-link" href="https://lucasbral.github.io" target="_blank">Blog</a></li>
+
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#01" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Mais
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -163,6 +164,30 @@
       <!-- Projetos -->
       <div class="container" id="projetos">
         <h2 class="section-heading">Alguns dos meus Projetos Favoritos</h2>
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1">Engenharia de Dados ! <span class="text-muted">utilizando a GCP</span></h2>
+            <p class="lead">Neste projeto, utilizamos algumas ferramentas cloud para construir uma plataforma Front-end regulada por meio de um balanceador de carga HTTP, o servidor web hospedava um dashboard criado no Looker Studio com uma análise dos dados de medições automáticas de mais de 200 bases de medição do INMET (Instituto Nacional de Meterologia) espalhadas pelo Brasil. O tratamento dos dados foi feito utilizando Pandas e Pyspark e também foi feito o uso de Pipelines com Apache Beam.</p>
+          </div>
+          <div class="col-md-5">
+            <img src="img/data-eng.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="150%" height="150%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em"></img>
+  
+          </div>
+        </div>
+        <hr class="featurette-divider">
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">Airflow!  <span class="text-muted">Engenharia de dados utilizando a API do Spotify.</span></h2>
+            <p class="lead">Neste projeto, colocaremos em prática algumas das habilidades mais comuns no mundo de dados. O objetivo é automatizar a extração diária das 50 músicas mais ouvidas 
+              no Spotify globalmente e armazenar essas informações em um banco de dados não relacional, no caso, o MongoDB. Para gerenciar e orquestrar esse processo, utilizamos o Apache Airflow,
+               garantindo eficiência e escalabilidade na execução das tarefas. O passo a passo completo para o desenvolvimento está detalhado em um <a href="https://lucasbral.github.io/posts/spotify/" target="_blank">post no meu blog</a>. Não deixe de conferir! </p>
+               <a class="btn btn-primary" target= _blank href="https://github.com/lucasbral/spotify_pipeline">Github</a>
+              </div>
+          <div class="col-md-5">
+            <img src="img/airflow.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="150%" height="150%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em"></img>
+          </div>
+        </div>
+        <hr class="featurette-divider">
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
           <h2 class="featurette-heading fw-normal lh-1">Futscrap !<span class="text-muted"> Webscraping de dados de futebol</span></h2>
@@ -170,7 +195,7 @@
           <a class="btn btn-primary" target= _blank href="https://github.com/lucasbral/fut_scrap">Github</a>
         </div>
         <div class="col-md-5 order-md-1">
-          <img src="img/scrap.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="150%" height="150%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em"></img>
+          <img src="img/scrap.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title></img>
         </div>
       </div>
       <hr class="featurette-divider">
@@ -182,7 +207,6 @@
         </div>
         <div class="col-md-5">
           <img src="img/forca.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="150%" height="150%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em"></img>
-          
         </div>
       </div>
       <hr class="featurette-divider">
@@ -207,17 +231,6 @@
           
         </div>
 	    </div>
-      <hr class="featurette-divider">
-      <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading fw-normal lh-1">Engenharia de Dados ! <span class="text-muted">utilizando a GCP</span></h2>
-          <p class="lead">Neste projeto, utilizamos algumas ferramentas cloud para construir uma plataforma Front-end regulada por meio de um balanceador de carga HTTP, o servidor web hospedava um dashboard criado no Looker Studio com uma análise dos dados de medições automáticas de mais de 200 bases de medição do INMET (Instituto Nacional de Meterologia) espalhadas pelo Brasil. O tratamento dos dados foi feito utilizando Pandas e Pyspark e também foi feito o uso de Pipelines com Apache Beam.</p>
-        </div>
-        <div class="col-md-5">
-          <img src="img/data-eng.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="150%" height="150%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em"></img>
-
-        </div>
-      </div>
       </div>
     
       <!-- Modal Certificados -->
@@ -336,7 +349,31 @@
         </div>
       </div>
 
-      <!-- Contatos -->
+
+      <!-- Blog -->
+      <hr class="featurette-divider">
+      <div class="container" id="blog">
+        <h2 class="section-heading">Blog</h2>
+        <div class="row featurette">
+          <div class="col-md-7"></div>
+          <h3 class="section-subheading text-muted">Se você gosta de tecnologia, tutoriais e temas relacionados a pesquisa e desenvolvimento, meu blog é o lugar certo para você! 🎯
+            <br>
+          Lá, compartilho conteúdos que vão desde dicas práticas e ferramentas úteis até insights sobre inovação e avanços no mundo da tecnologia.
+            <br>
+            <br>
+          👉 <a href="https://lucasbral.github.io" target="_blank" style="color: black; text-decoration: none; font-weight: bold;">Acesse agora</a> e descubra algo novo !</h3>
+          </div>
+        <br>
+        <br>
+        <div class="d-flex justify-content-center">
+        <a href="https://lucasbral.github.io" target="_blank">
+          <img src="img/blog.png" class="bd-placeholder-img bd-placeholder-img-xl featurette-image img-fluid mx-auto" width="800" height="1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 800x1200" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+        </a>
+
+        </div>
+      </div>
+
+            <!-- Contatos -->
       <hr class="featurette-divider">
       <div class="container" id="contatos">
         <h2 class="section-heading">Contatos</h2>
@@ -419,7 +456,7 @@
   </main>
   <footer class="container">
     <div class="col-lg-12 text-center">
-      <p>&copy; 2020-2024 &middot; </a></p>
+      <p>&copy; 2020-2025 &middot; </a></p>
   </footer>
 </body>
 </html>
