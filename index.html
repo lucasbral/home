@@ -389,37 +389,44 @@
                         </div>
                       </div>
                       <div class="col-md-10">
-                        <form id="contactForm" onsubmit="SendEmail(); reset() ; return false; ">
+                        <form id="contactForm" action="https://formsubmit.co/lucasdecarvalhosobral@gmail.com" method="POST">
+
+                         <!-- <input type="hidden" name="_next" value="https://seusite.com/obrigado.html"> -->
+
+                          <input type="hidden" name="_subject" value="Nova Mensagem do Site!">
+                          
+                          <input type="hidden" name="_captcha" value="false">
+
                           <div class="form-group">
                             <label class="control-label col-sm" for="name">Nome:</label>
-                            <div class="col-md">          
-                            <input type="text" class="form-control" id="name" placeholder="Ex: Lucas c Sobral" name="fname">
+                            <div class="col-md">
+                              <input type="text" class="form-control" id="name" placeholder="Ex: Lucas c Sobral" name="Nome" required>
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="control-label col-sm" for="phone">Telefone:</label>
-                            <div class="col-md">          
-                            <input type="text" class="form-control" id="phone" placeholder="Ex: 01 2345-6789" name="lname">
+                            <div class="col-md">
+                              <input type="text" class="form-control" id="phone" placeholder="Ex: 01 2345-6789" name="Telefone">
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="control-label col-sm" for="email">Email:</label>
                             <div class="col-md">
-                            <input type="email" class="form-control" id="email" placeholder="Ex: lucas@gmail.com" name="email">
+                              <input type="email" class="form-control" id="email" placeholder="Ex: lucas@gmail.com" name="Email" required>
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="control-label col-sm" for="message">Mensagem:</label>
                             <div class="col-md text-center">
-                            <textarea class="form-control" rows="5" id="message"></textarea > 
+                              <textarea class="form-control" rows="5" id="message" name="Mensagem" required></textarea>
                             </div>
                           </div>
-                          <div class="form-group">        
+                          <div class="form-group">
                             <div class="col-md-offset text-center">
                               <button class="btn btn-primary" id="submitButton" type="submit">Enviar</button>
                             </div>
                           </div>
-                        </div>
+                        </form>
                       </div>
                     </div>
                   </div>
