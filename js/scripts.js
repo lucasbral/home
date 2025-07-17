@@ -47,55 +47,6 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
     // ================== LÓGICA DO FORMULÁRIO DE CONTATO ==================
-    // Seleciona o formulário pelo ID
-    const form = document.getElementById('contactForm');
-
-    // Verifica se o formulário realmente existe na página antes de adicionar o listener
-    if (form) {
-        // Adiciona o "escutador" para o evento de envio (submit)
-        form.addEventListener('submit', function(event) {
-            // Previne o comportamento padrão do formulário (que é recarregar a página)
-            event.preventDefault();
-            
-            const formData = new FormData(form);
-            const submitButton = document.getElementById('submitButton');
-            
-            // Dá um feedback visual para o usuário
-            submitButton.disabled = true;
-            submitButton.innerText = "Enviando...";
-            
-            // Envia os dados para o formsubmit.co usando a Fetch API (AJAX)
-            fetch(form.action, {
-              method: 'POST',
-              body: formData,
-              headers: {
-                'Accept': 'application/json' // Pede uma resposta em formato JSON
-              }
-            })
-            .then(response => response.json()) // Converte a resposta do servidor para JSON
-            .then(data => {
-              // Verifica se o envio foi bem-sucedido
-              if (data.success) {
-                alert("Mensagem enviada com sucesso!");
-                form.reset(); // Limpa os campos do formulário
-              } else {
-                alert("Ocorreu um erro no envio. Tente novamente.");
-                console.error(data); // Mostra o erro no console para depuração
-              }
-            })
-            .catch(error => {
-              // Lida com erros de rede (ex: sem internet)
-              console.error('Erro na requisição:', error);
-              alert("Ocorreu um erro de conexão. Verifique sua internet e tente novamente.");
-            })
-            .finally(() => {
-                // Executa sempre, seja sucesso ou falha
-                // Reabilita o botão e restaura o texto original
-                submitButton.disabled = false;
-                submitButton.innerText = "Enviar Mensagem";
-            });
-        });
-    }
     // ================== FIM DA LÓGICA DO FORMULÁRIO ==================
 
 });

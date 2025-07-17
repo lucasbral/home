@@ -20,9 +20,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/index.css" rel='stylesheet' />
     
-
 </head>
-
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -47,8 +45,6 @@
                       <li><a data-bs-toggle="modal" data-bs-target="#modalcertificados" class ="nav-link"href="#modalcertificados">Certificados</a></li>
                     </ul>
                   </li>
-
-                  
               </ul>
           </div>
       </div>
@@ -391,7 +387,7 @@
                       <div class="col-md-10">
                         <form id="contactForm" action="https://formsubmit.co/lucasdecarvalhosobral@gmail.com" method="POST">
 
-                         <!-- <input type="hidden" name="_next" value="https://seusite.com/obrigado.html"> -->
+                          <input type="hidden" name="_next" value="data:text/html,<script>window.close()</script>">
 
                           <input type="hidden" name="_subject" value="Nova Mensagem do Site!">
                           
@@ -457,6 +453,45 @@
         <script defer src="js/scripts.js"></script>
         <script defer src=" https://cdn.jsdelivr.net/npm/chart.js@~4.1.1"></script>
         <script defer src="https://unpkg.com/chartjs-chart-wordcloud@4"></script>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const submitButton = document.getElementById('submitButton');
+            
+            form.addEventListener('submit', function(e) {
+              // Change button text to show loading state
+              const originalText = submitButton.innerHTML;
+              //submitButton.innerHTML = 'Enviando...';
+              //submitButton.disabled = true;
+              
+              // Create a hidden iframe to submit the form
+              const iframe = document.createElement('iframe');
+              iframe.style.display = 'none';
+              iframe.name = 'hiddenFrame';
+              document.body.appendChild(iframe);
+              
+              // Set form target to iframe
+              form.target = 'hiddenFrame';
+              
+              // Show native popup after a short delay
+              setTimeout(function() {
+                // Reset button
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+                
+                // Show native browser alert
+                alert('✅ Mensagem Enviada!\n\nSua mensagem foi enviada com sucesso!\nRetornarei o contato em breve.');
+                
+                // Reset form
+                form.reset();
+                
+                // Remove iframe
+                document.body.removeChild(iframe);
+              }, 2000);
+            });
+          });
+        </script>
 
 
     </div>  
