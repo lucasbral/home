@@ -47,6 +47,50 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
     // ================== LÓGICA DO FORMULÁRIO DE CONTATO ==================
+    const form = document.getElementById('contactForm');
+    if (form) {
+        const submitButton = document.getElementById('submitButton');
+        const originalButtonText = submitButton.innerHTML;
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+
+            submitButton.innerHTML = 'Enviando...';
+            submitButton.disabled = true;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('✅ Mensagem Enviada!\n\nSua mensagem foi enviada com sucesso!\nRetornarei o contato em breve.');
+                    form.reset();
+                } else {
+                    const data = await response.json();
+                    if (data.hasOwnProperty('errors')) {
+                        alert(`Erro: ${data.errors.map(error => error.message).join(", ")}`);
+                    } else {
+                        alert('Ocorreu um erro ao enviar o formulário. Tente novamente.');
+                    }
+                }
+            } catch (error) {
+                console.error('Erro no envio do formulário:', error);
+                alert('Ocorreu um erro de conexão. Verifique sua internet e tente novamente.');
+            } finally {
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+            }
+        }
+
+        form.addEventListener('submit', handleSubmit);
+    }
     // ================== FIM DA LÓGICA DO FORMULÁRIO ==================
 
 });
